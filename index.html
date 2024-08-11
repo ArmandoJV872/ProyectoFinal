@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Funcional</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Formulario a la izquierda -->
+        <form id="dataForm" action="#" method="post">
+            <ul>
+                <li>
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="user_name" />
+                </li>
+                <li>
+                    <label for="apellido">Apellido Paterno:</label>
+                    <input type="text" id="apellido" name="user_apellido" />
+                </li>
+                <li>
+                    <label for="mail">E-Mail:</label>
+                    <input type="email" id="mail" name="user_mail" />
+                </li>
+                <li>
+                    <label for="color">Color favorito:</label>
+                    <input type="text" id="color" name="user_color" />
+                </li>
+                <li>
+                    <div class="g-recaptcha" data-sitekey="TU_CLAVE_DE_SITIO"></div>
+                </li>
+                <li class="button">
+                    <button type="button" onclick="addRecord()">Agregar</button>
+                </li>
+            </ul>
+        </form>
+
+        <!-- Lista de registros a la derecha -->
+        <div id="recordList" class="record-list"></div>
+    </div>
+
+    <!-- Ventana emergente (pop-up) para visualizar registros -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <h2>Detalles del Registro</h2>
+            <p id="popupDetails"></p>
+        </div>
+    </div>
+</body>
+</html>
